@@ -72,4 +72,13 @@ public class Game {
             }
         }
     }
+
+    public void death() {
+        for (int y = 0; y < gridHeight; y++) {
+            for (int x = 0; x < gridWidth; x++) {
+                if (grid[y][x] == 1 && (neighbours[y][x] < 2 || neighbours[y][x] > 3))
+                    grid[y][x] = 0;
+            }
+        }
+    }
 }
