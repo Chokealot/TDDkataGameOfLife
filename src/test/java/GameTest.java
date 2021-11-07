@@ -60,6 +60,15 @@ public class GameTest {
         assertEquals(0, game.grid[0][2]);
     }
 
+    @Test
+    public void testToSeeIfACellWithMoreThanThreeNeighboursDiesDueToOverpopulation() {
+        setTestGridWithThreeAliveCellsInARow();
+        game.setSpecificNode(1,0);
+        game.setSpecificNode(1,1);
+        game.death();
+        assertEquals(0,game.grid[1][1]);
+    }
+
     public void setTestGridWithThreeAliveCellsInARow() {
         game.setSpecificNode(0,0);
         game.setSpecificNode(0,1);
