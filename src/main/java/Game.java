@@ -47,20 +47,20 @@ public class Game {
     }
 
     public void findLife() {
-        for (int y = 0; y < gridHeight; y++) {
-            for (int x = 0; x < gridWidth; x++) {
+        for (int height = 0; height < gridHeight; height++) {
+            for (int width = 0; width < gridWidth; width++) {
                 int count = 0;
                 for (int index1 = -1; index1 < 2; index1++) {
-                    if (y + index1 >= 0 && y + index1 < gridHeight) {
+                    if (height + index1 >= 0 && height + index1 < gridHeight) {
                         for (int index2 = -1; index2 < 2; index2++) {
-                            if (x + index2 >= 0 && x + index2 < gridWidth) {
-                                if (!(y+index1 == y && index2+x == x) && grid[y + index1][x + index2] == 1)
+                            if (width + index2 >= 0 && width + index2 < gridWidth) {
+                                if (!(height+index1 == height && index2+width == width) && grid[height + index1][width + index2] == 1)
                                     count++;
                             }
                         }
                     }
                 }
-                neighbours[y][x] = count;
+                neighbours[height][width] = count;
             }
         }
     }
