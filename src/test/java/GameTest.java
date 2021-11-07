@@ -42,6 +42,9 @@ public class GameTest {
         game.setSpecificNode(0,2);
         game.findLife();
         assertEquals(2, game.neighbours[0][1]);
+        game.setSpecificNode(1,1);
+        game.findLife();
+        assertEquals(3, game.neighbours[0][1]);
     }
 
 }
