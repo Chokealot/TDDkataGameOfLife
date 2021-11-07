@@ -65,19 +65,19 @@ public class Game {
     }
 
     public void birth() {
-        for (int y = 0; y < gridHeight; y++) {
-            for (int x = 0; x < gridWidth; x++) {
-                if (grid[y][x] == 0 && neighbours[y][x] == 3)
-                    grid[y][x] = 1;
+        for (int height = 0; height < gridHeight; height++) {
+            for (int width = 0; width < gridWidth; width++) {
+                if (grid[height][width] == 0 && neighbours[height][width] == 3)
+                    grid[height][width] = 1;
             }
         }
     }
 
     public void death() {
-        for (int y = 0; y < gridHeight; y++) {
-            for (int x = 0; x < gridWidth; x++) {
-                if (grid[y][x] == 1 && (neighbours[y][x] < 2 || neighbours[y][x] > 3))
-                    grid[y][x] = 0;
+        for (int height = 0; height < gridHeight; height++) {
+            for (int width = 0; width < gridWidth; width++) {
+                if (grid[height][width] == 1 && (neighbours[height][width] < 2 || neighbours[height][width] > 3))
+                    grid[height][width] = 0;
             }
         }
     }
