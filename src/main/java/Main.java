@@ -4,6 +4,7 @@ public class Main {
         Game game = new Game(10,10);
         game.initializeGrid();
         game.createRandomGame();
+
         while (true) {
             game.printGame();
             game.findLife();
