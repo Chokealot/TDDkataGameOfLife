@@ -81,4 +81,14 @@ public class Game {
             }
         }
     }
+
+    public void createRandomGame() {
+        for (int y=0; y < gridHeight; y++) {
+            for (int x = 0; x < gridWidth; x++) {
+                int rand = (int)(Math.random() * 2) + 0;
+                if (rand == 1) { grid[y][x] = 1; }
+                else { grid[y][x] = 0; }
+            }
+        }
+    }
 }
