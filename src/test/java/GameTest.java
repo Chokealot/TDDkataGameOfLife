@@ -53,8 +53,12 @@ public class GameTest {
         assertEquals(1, game.grid[1][1]);
     }
 
-
-
+    @Test
+    public void testToSeeIfACellWithLessThanTwoNeighboursDiesDueToUnderpopulation() {
+        setTestGridWithThreeAliveCellsInARow();
+        game.death();
+        assertEquals(0, game.grid[0][2]);
+    }
 
     public void setTestGridWithThreeAliveCellsInARow() {
         game.setSpecificNode(0,0);
