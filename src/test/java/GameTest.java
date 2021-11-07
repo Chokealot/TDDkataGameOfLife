@@ -2,10 +2,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class GameTest {
 
     Game game = new Game(3,3);
+    int [][] expectedGrid = {{0,0,0},{0,0,0},{0,0,0}};
 
     @Before
     public void initGrid() {
@@ -24,7 +26,6 @@ public class GameTest {
 
     @Test
     public void checkIfGridIsCreated() {
-        int [][] expectedGrid = {{0,0,0},{0,0,0},{0,0,0}};
         game.createEmptyGrid();
         assertEquals(expectedGrid, game.grid);
     }
@@ -67,6 +68,12 @@ public class GameTest {
         game.setSpecificNode(1,1);
         game.death();
         assertEquals(0,game.grid[1][1]);
+    }
+
+    @Test
+    public void testToSeeIfRandomGameMethodGeneratesSomethingElseThanAnEmptyBoard() {
+        game.createRandomGame();
+        assertNotEquals(expectedGrid, game.grid);
     }
 
     public void setTestGridWithThreeAliveCellsInARow() {
