@@ -48,6 +48,7 @@ public class GameTest {
     @Test
     public void testToSeeIfADeadCellWithThreeNeighboursWillStartToLive() {
         setTestGridWithThreeAliveCellsInARow();
+        game.findLife();
         game.birth();
         assertEquals(1, game.grid[1][1]);
     }
