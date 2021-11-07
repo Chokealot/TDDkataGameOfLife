@@ -31,4 +31,13 @@ public class Game {
         grid = new int[gridHeight][gridWidth];
         neighbours = new int[gridHeight][gridWidth];
     }
+
+    public int[][] createEmptyGrid() {
+        for (int height=0; height < gridHeight; height++) {
+            for (int width = 0; width < gridWidth; width++) {
+                grid[height][width] = 0;
+            }
+        }
+        return grid;
+    }
 }
