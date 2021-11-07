@@ -91,4 +91,14 @@ public class Game {
             }
         }
     }
+
+    public void printGame() {
+        for (int height=0; height < gridHeight; height++) {
+            for (int width=0; width < gridWidth; width++)  {
+                if (grid[height][width] == 1) System.out.print("x");
+                else System.out.print(".");
+            }
+            System.out.println();
+        }
+    }
 }
