@@ -63,4 +63,13 @@ public class Game {
             }
         }
     }
+
+    public void birth() {
+        for (int y = 0; y < gridHeight; y++) {
+            for (int x = 0; x < gridWidth; x++) {
+                if (grid[y][x] == 0 && neighbours[y][x] == 3)
+                    grid[y][x] = 1;
+            }
+        }
+    }
 }
