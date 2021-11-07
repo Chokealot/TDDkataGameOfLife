@@ -37,9 +37,7 @@ public class GameTest {
 
     @Test
     public void findNeighboursAndCountHowManyEachCellHasAndShouldBeTwo() {
-        game.setSpecificNode(0,0);
-        game.setSpecificNode(0,1);
-        game.setSpecificNode(0,2);
+        setTestGridWithThreeAliveCellsInARow();
         game.findLife();
         assertEquals(2, game.neighbours[0][1]);
         game.setSpecificNode(1,1);
@@ -47,4 +45,19 @@ public class GameTest {
         assertEquals(3, game.neighbours[0][1]);
     }
 
+    @Test
+    public void testToSeeIfADeadCellWithThreeNeighboursWillStartToLive() {
+        setTestGridWithThreeAliveCellsInARow();
+        game.birth();
+        assertEquals(1, game.grid[1][1]);
+    }
+
+
+
+
+    public void setTestGridWithThreeAliveCellsInARow() {
+        game.setSpecificNode(0,0);
+        game.setSpecificNode(0,1);
+        game.setSpecificNode(0,2);
+    }
 }
