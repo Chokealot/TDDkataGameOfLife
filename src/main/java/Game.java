@@ -40,4 +40,9 @@ public class Game {
         }
         return grid;
     }
+
+    public void setSpecificNode(int height, int width) {
+        if (grid[height][width] == 0) grid[height][width] = 1;
+        else grid[height][width] = 0;
+    }
 }
