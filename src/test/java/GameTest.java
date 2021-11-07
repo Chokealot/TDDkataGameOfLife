@@ -10,4 +10,13 @@ public class GameTest {
         assertEquals(expectedGrid, game.createEmptyGrid());
     }
 
+    @Test
+    public void initializeGridWithSpecificWidthAndHeight() {
+        game.setGridHeight(3);
+        game.setGridWidth(3);
+        game.initializeGrid();
+        int[][] testGrid = new int[3][3];
+        assertEquals(testGrid, game.grid);
+    }
+
 }
