@@ -24,8 +24,9 @@ public class GameTest {
 
     @Test
     public void checkIfGridIsCreated() {
-        int [][] expectedGrid = new int[3][3];
-        assertEquals(expectedGrid, game.createEmptyGrid());
+        int [][] expectedGrid = {{0,0,0},{0,0,0},{0,0,0}};
+        game.createEmptyGrid();
+        assertEquals(expectedGrid, game.grid);
     }
 
     @Test
@@ -40,7 +41,7 @@ public class GameTest {
         game.setSpecificNode(0,1);
         game.setSpecificNode(0,2);
         game.findLife();
-        assertEquals(2, game.grid[0][1]);
+        assertEquals(2, game.neighbours[0][1]);
     }
 
 }

@@ -32,13 +32,12 @@ public class Game {
         neighbours = new int[gridHeight][gridWidth];
     }
 
-    public int[][] createEmptyGrid() {
+    public void createEmptyGrid() {
         for (int height = 0; height < gridHeight; height++) {
             for (int width = 0; width < gridWidth; width++) {
                 grid[height][width] = 0;
             }
         }
-        return grid;
     }
 
     public void setSpecificNode(int height, int width) {
